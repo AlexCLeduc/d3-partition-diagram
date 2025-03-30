@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/d3-partition-diagram/static/css/main.e7ede909.chunk.css",
+    "main.js": "/d3-partition-diagram/static/js/main.afe9f699.chunk.js",
+    "main.js.map": "/d3-partition-diagram/static/js/main.afe9f699.chunk.js.map",
+    "runtime-main.js": "/d3-partition-diagram/static/js/runtime-main.84d046b9.js",
+    "runtime-main.js.map": "/d3-partition-diagram/static/js/runtime-main.84d046b9.js.map",
+    "static/js/2.d39ef7fa.chunk.js": "/d3-partition-diagram/static/js/2.d39ef7fa.chunk.js",
+    "static/js/2.d39ef7fa.chunk.js.map": "/d3-partition-diagram/static/js/2.d39ef7fa.chunk.js.map",
+    "static/js/3.3ddb496b.chunk.js": "/d3-partition-diagram/static/js/3.3ddb496b.chunk.js",
+    "static/js/3.3ddb496b.chunk.js.map": "/d3-partition-diagram/static/js/3.3ddb496b.chunk.js.map",
+    "index.html": "/d3-partition-diagram/index.html",
+    "static/css/main.e7ede909.chunk.css.map": "/d3-partition-diagram/static/css/main.e7ede909.chunk.css.map",
+    "static/js/2.d39ef7fa.chunk.js.LICENSE.txt": "/d3-partition-diagram/static/js/2.d39ef7fa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84d046b9.js",
+    "static/js/2.d39ef7fa.chunk.js",
+    "static/css/main.e7ede909.chunk.css",
+    "static/js/main.afe9f699.chunk.js"
+  ]
+}
