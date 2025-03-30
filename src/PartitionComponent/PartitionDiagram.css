@@ -1,0 +1,276 @@
+/* Most comments added by claude when converting from SCSS to CSS */
+
+
+/* Color constants converted to CSS variables for easier reuse */
+:root {
+  --primaryColor: #26374A;
+  --tertiaryColor: #8c949e; /* this one is used lots at varying alpha/darkness levels, should stay grey */
+  --backgroundColor: #fff;
+  --highlightColor: #da3a38;
+  --separatorColor: #bbc1c9;
+  --buttonPrimaryColor: #2C70C9;
+  --textColor: #333;
+  --textLightColor: #fff;
+  --standardBorderRadius: 10px;
+}
+
+.partition-diagram {
+  min-width: inherit;
+}
+
+.partition-diagram > .header {
+  position: absolute;
+  text-align: center;
+  color: var(--textLightColor);
+  font-size: 20px;
+  font-weight: 300;
+  top: 0px;
+}
+
+.partition-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: var(--textLightColor);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.partition-item__title { 
+  margin-left: 20px;
+  padding: 0px 5px;
+  font-weight: 400;
+}
+
+.partition-item--overflowing > .partition-item__title,
+.partition-item--overflowing > .partition-item__right-ie-fix > .partition-item__title, 
+.partition-item__negative-title-backing > .partition-item__title { 
+  padding: 0px 15px;
+  max-width: 85%;
+  min-width: 10%;
+  line-height: 1;
+}
+
+.partition-item--overflowing > .partition-item__title,
+.partition-item--overflowing > .partition-item__right-ie-fix > .partition-item__title {
+  min-height: 100%;
+}
+
+.partition-item--negative_value {
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 1px, rgba(8, 40, 86,.5) 1px, rgba(8, 40, 86,.5) 5px);
+}
+
+/* Nested selector for negative title backing */
+.partition-item__negative-title-backing:not(.partition-item__right-ie-fix) {
+  align-items: center;
+  display: flex;
+  margin-left: 20px;
+}
+
+.partition-item__negative-title-backing:not(.partition-item__right-ie-fix) > .partition-item__title {
+  margin-left: 0px;
+  color: #ffa8a8;
+}
+
+.partition-item__title.right {
+  position: absolute;
+  right: 5px;
+  padding: 0px 15px;
+  text-align: right;
+}
+
+.partition-item__right-ie-fix {
+  height: 100%;
+}
+
+.partition-item.root {
+  display: flex;
+  cursor: default;
+  text-align: center;
+  font-size: 36px;
+  color: var(--textLightColor);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.partition-item.root > .partition-item__title {
+  width: inherit;
+  margin-left: 0px;
+}
+
+.partition-item.root > .partition-item__title > .amount {
+  font-size: 48px;
+  margin: 0px;
+}
+
+.partition-item.root > .partition-item__title > .amount > a {
+  color: var(--textLightColor);
+  border-bottom: 3px dashed;
+}
+
+.partition-item.root > .partition-item__title > .amount > a:hover,
+.partition-item.root > .partition-item__title > .amount > a:focus,
+.partition-item.root > .partition-item__title > .amount > a:active {
+  border-bottom: 3px solid;
+  text-decoration: none;
+}
+
+.partition-item.faded {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.popup-row-bottom-border {
+  border-bottom: 1px solid var(--separatorColor);
+}
+
+.popup-row-top-border {
+  border-top: 1px solid var(--separatorColor);
+}
+
+.popup-font-xl {
+  font-size: 28px;
+}
+
+.popup-font-l {
+  font-size: 24px;
+}
+
+.popup-font-ml {
+  font-size: 20px;
+}
+
+.popup-font-m {
+  font-size: 18px;
+}
+
+.popup-font-sm {
+  font-size: 16px;
+}
+
+.popup-font-s {
+  font-size: 12px;
+}
+
+.partition-popup {
+  border-radius: var(--standardBorderRadius);
+  z-index: 100;
+  text-align: left;
+  color: var(--textColor);
+  position: absolute;
+  width: 400px;
+  background-color: #e6e8ea; /* lighten($tertiaryColor, 40%) - approximated */
+  padding: 20px;
+  cursor: default;
+}
+
+.partition-popup.fixed-popup {
+  position: fixed;
+}
+
+.partition-popup > .popup-row-top > .stat1 {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.partition-popup > .popup-row-top > .stat2 {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+
+.partition-popup > .popup-row-top > .stat-split {
+  border-right: 1px solid var(--separatorColor);
+}
+
+.partition-popup > .popup-row-top > span > .popup-revenue-text {
+  line-height: 1; 
+  text-align: center; 
+  color: var(--textColor); 
+  width: 70%; 
+  margin-left: auto; 
+  margin-right: auto;
+  display: inline-flex;
+}
+
+.partition-popup > .popup-decription-text {
+  max-height: 200px;
+  overflow-y: auto;
+  color: var(--textColor);
+  padding-right: 4px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.partition-popup > .btn {
+  color: var(--textLightColor);
+}
+
+.partition-popup > .popup-pointer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -40px;
+  border-top: 25px solid transparent;
+  border-right: 40px solid #e6e8ea; /* lighten($tertiaryColor, 40%) - approximated */
+  border-bottom: 25px solid transparent;
+}
+
+.partition-popup.fixed-popup.unfocus-all-button-container {
+  bottom: 0px;
+  right: 0px;
+  width: 145px;
+  padding: 15px;
+  border-left: 3px solid var(--buttonPrimaryColor);
+  border-top: 3px solid var(--buttonPrimaryColor);
+  border-radius: 0px;
+  border-top-left-radius: var(--standardBorderRadius);
+}
+
+.partition-item:focus a.minimize.hovering,
+.partition-item:hover a.minimize.hovering {
+  display: inline;
+}
+
+polygon.partition-svg-link.large,
+polygon.partition-svg-link.medium {
+  opacity: 0.5;
+  stroke-width: 0px;
+}
+
+polygon.partition-svg-link.tiny {
+  opacity: 0.6;
+  stroke-width: 1px;
+}
+
+polygon.partition-svg-link.large.faded,
+polygon.partition-svg-link.medium.faded {
+  opacity: 0.2;
+}
+
+polygon.partition-svg-link.tiny.faded {
+  opacity: 0.4;
+}
+
+polygon.partition-svg-link.large.highlighted,
+polygon.partition-svg-link.medium.highlighted {
+  opacity: 0.9;
+}
+
+polygon.partition-svg-link.tiny.highlighted {
+  opacity: 1;
+}
+
+.btn.partition-link-out:hover,
+.btn.partition-link-out:focus,
+.btn.partition-link-out:active {
+  text-decoration: underline;
+}
+
+.btn.magnify:not(:hover):not(:focus):not(:active) {
+  background-color: rgba(0,0,0,0) !important;
+  color: inherit !important;
+  border: 1px solid;
+  border-color: inherit; 
+}
