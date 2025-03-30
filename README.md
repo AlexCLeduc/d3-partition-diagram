@@ -1,5 +1,5 @@
 # What is this
-
+[demo](https://alexcleduc.github.io/d3-partition-diagram/)
 This is a "partition diagram", an accordion to visualize the scale of a hierarchy:
 
 ![Screenshot 2025-03-30 at 12 14 21](https://github.com/user-attachments/assets/9dd96feb-d902-49c2-bd2b-d88825f89de1)
